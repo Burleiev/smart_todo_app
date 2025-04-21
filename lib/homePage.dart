@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Добавить задачу");
+          Navigator.of(context).pushNamed('/dialog');
         },
         child: Icon(Icons.add),
       ),

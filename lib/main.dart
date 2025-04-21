@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_todo_app/dialog.dart';
 import 'package:smart_todo_app/homePage.dart';
 
 void main() {
@@ -13,9 +14,11 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
+        '/dialog': (context) => DialogScreen(),
       },
     );
   }
 }
+
 
 
