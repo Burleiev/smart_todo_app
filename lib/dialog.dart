@@ -37,8 +37,23 @@ class _DialogScreenState extends State<DialogScreen> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                print("New task: ${_controller.text}");
-                Navigator.pop(context);
+                final task = _controller.text.trim();
+                if (task.isNotEmpty) {
+                  Navigator.pop(context, task);
+                  _controller.clear();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        "The task was saved successfully",
+                        style: TextStyle(
+                          color: Colors.green.shade900,
+                        ),
+                      ),
+                      backgroundColor: Colors.green[100],
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                }
               },
               child: Text("Add Task"),
             )
